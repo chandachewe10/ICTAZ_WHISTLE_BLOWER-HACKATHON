@@ -78,7 +78,7 @@
                     <h4 class="text-center p-2">Recent Reported Cases Pending verification</h4>
 
 
-                    <table class="js-table">
+                    <table class="js-table" id="incidents_report">
                         <thead>
                             <tr>
                                 <th scope="col">Reporter</th>
@@ -147,7 +147,39 @@
 
 
 
+    <script>
+               
+                  
+        $('#incidents_report').DataTable({
+            "lengthChange": false,
+            dom: 'Bfrtip',
+           
+            buttons: [{
+                    extend: 'pdfHtml5',
+                    className: 'btn btn-info btn-sm',
+                    title: 'Incidents Report',
+                },
+                {
+                    extend: 'csvHtml5',
+                    className: 'btn btn-success btn-sm',
+                    title: 'Incidents Report',
+                },
+                {
+                    extend: 'copyHtml5',
+                    className: 'btn btn-primary btn-sm',
+                    title: 'Incidents Report',
+                },
+                {
+                    extend: 'excelHtml5',
+                    className: 'btn btn-secondary btn-sm',
+                    title: 'Incidents Report',
+                },
 
+
+             ]
+        });
+   
+</script>
 
 
 @endsection

@@ -22,10 +22,18 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-
     <link href="{{ asset('toastr/toastr.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('toastr/jquery-3.3.1.min.js') }}"></script>
+    <!--Data-tables-->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
 </head>
 
 <body>
@@ -61,14 +69,14 @@
         <div class="container py-4 navbar-space">
             <div class="row">
                 {{-- @if (Auth::check() && Auth::user()->role) --}}
-
+                <div class="col-md-3">
+                  <x-sidebar />
+              </div>
                 <div class="col-md-9">
                     @yield('content')
                 </div>
 
-                <div class="col-md-3">
-                    <x-sidebar />
-                </div>
+               
                 {{-- @else
                     <div class="col-md-12">
                         @yield('content')
@@ -78,6 +86,7 @@
 
             </div>
         </div>
+       
     </div>
 
 
@@ -112,7 +121,7 @@
 // Loader
   </script>
 
-    <script src="{{ asset('toastr/jquery-3.3.1.min.js') }}"></script>
+   
     <script src="{{ asset('toastr/toastr.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/echarts.min.js') }}"></script>

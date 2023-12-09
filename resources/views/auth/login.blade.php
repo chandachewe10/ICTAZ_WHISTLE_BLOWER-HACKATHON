@@ -6,8 +6,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="logo-image text-center font-weight-bold text-white mx-auto">
-                <img src="{{asset('images/tesscrime.png')}}" alt="">
+                <img src="{{asset('images/ICTAZ_LOGO.png')}}" alt="LOGO" width="130" height="180" style="border-radius:100%">
             </div>
+            <br>
             <div class="card">
                 <div class="card-header text-center text-uppercase"><i class="fa fa-user"></i>  {{ __('Login') }}</div>
 

@@ -1,11 +1,21 @@
-@extends('layouts.app')
 
-@section('title')
-    Crime Category
-@endsection
+
+
+@extends('adminlte::page')
+@section('title', 'Categories')
+
+@section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@stop
+
+
+
+@section('content_header')
+    <h1>Crime Category</h1>
+@stop
 
 @section('content')
-    <div class="container">
+<div class="container">
         {{-- <a href="{{ route('crime-category.create') }}" class="btn btn-primary">Add Crime Category</a> --}}
         <div class="card">
 
@@ -52,4 +62,96 @@
             </div>
         </div>
     </div>
-@endsection
+@stop
+
+@section('footer')
+<div class="footer-content">
+            <p>&copy; 2023 ICTAZ WHISTLE BLOWER HACKATHON. All rights reserved. Created and designed with ❤️ by Chanda Chewe.</p>
+        </div> 
+@stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

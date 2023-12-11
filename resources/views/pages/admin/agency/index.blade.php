@@ -10,7 +10,7 @@
 
 
 @section('content_header')
-    <h1>Edit Agent</h1>
+    <h1>Added Agents</h1>
 @stop
 
 @section('content')

@@ -317,6 +317,13 @@ return [
         ],
         ['header' => 'Features'],
         [
+            'text' => 'Crime Categories',
+            'route' => 'crime-category.index',
+            'icon' => 'fas fa-chart-pie',
+            'label_color' => 'success',
+            'can' => ['is_security_agency','is_super_admin']
+        ],
+        [
             'text' => 'Report Incident',
             'route' => 'report',
             'icon' => 'fas fa-exclamation-triangle',
@@ -349,6 +356,18 @@ return [
         ],
 
         [
+            'text' => 'Incidents',
+            'route' => 'incident.index',
+            'icon' => 'fas fa-chart-pie',
+            'label_color' => 'success',
+            'can' => ['is_security_agency','is_super_admin','is_other_agency']
+        ],
+
+       
+
+
+
+        [
             'text' => 'Agency',
             'route' => 'agency.index',
             'icon' => 'fas fa-exclamation-triangle',
@@ -370,6 +389,13 @@ return [
 
 
         ['header' => 'Profile & Info'],
+        [
+            'text' => 'Announcement',
+            'route' => 'announcement.index',
+            'icon' => 'fas fa-bell',
+            'label_color' => 'success',
+            'can' => ['is_security_agency','is_super_admin']
+        ],
        
         [
             'text' => 'News & Info',

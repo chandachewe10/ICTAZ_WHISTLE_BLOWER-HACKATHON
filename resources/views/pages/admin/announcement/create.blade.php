@@ -1,11 +1,20 @@
-@extends('layouts.app')
 
-@section('title')
-    {{ $title }}
-@endsection
+
+@extends('adminlte::page')
+@section('title', 'Announcement')
+
+@section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@stop
+
+
+
+@section('content_header')
+    <h1>Post Announcement</h1>
+@stop
 
 @section('content')
-    <div class="card">
+<div class="card">
         <div class="card-header text-center">
             Post Announcement
         </div>
@@ -48,4 +57,69 @@
         </div>
     </div>
 
-@endsection
+@stop
+
+@section('footer')
+<div class="footer-content">
+            <p>&copy; 2023 ICTAZ WHISTLE BLOWER HACKATHON. All rights reserved. Created and designed with ❤️ by Chanda Chewe.</p>
+        </div> 
+@stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,6 +6,8 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
+use Auth;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -26,9 +28,16 @@ class EventServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        parent::boot();
+{
+    parent::boot();
 
-        //
-    }
+    Event::listen(BuildingMenu::class, function (BuildingMenu $event) {
+        $event->menu->add([
+            'text' => 'Profile',
+            'url' => route('user.profile', Auth::user()->id),
+
+           
+        ]);
+    });
+}
 }

@@ -29,17 +29,17 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('is_reporter', function ($user) {
             return $user->is_reporter();
         });
-        
+
         Gate::define('is_security_agency', function ($user) {
             return $user->is_security_agency();
         });
-        
+
         Gate::define('is_super_admin', function ($user) {
             return $user->is_super_admin();
         });
         Gate::define('is_other_agency', function ($user) {
             return $user->is_other_agency();
         });
-       
+
     }
 }

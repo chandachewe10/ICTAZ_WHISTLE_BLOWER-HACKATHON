@@ -1,4 +1,13 @@
-@extends('layouts.app')
+
+@extends('adminlte::page')
+@section('title', 'Dashboard')
+
+
+
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
 
 @section('content')
     <div class="container">
@@ -57,7 +66,7 @@
 
                     <div class="col-md-3 card card-header  text-center">
                         <div class="card card-heading bg-primary text-white text-uppercase">
-                            Total Closed Invistigation
+                            Closed Investigations
                         </div>
                         {{-- <a href="{{ route('staff.index') }}"> --}}
                         <div class="card card-body">
@@ -78,7 +87,7 @@
                     <h4 class="text-center p-2">Recent Reported Cases Pending verification</h4>
 
 
-                    <table class="js-table" id="incidents_report">
+                    <table class="js-table" >
                         <thead>
                             <tr>
                                 <th scope="col">Reporter</th>
@@ -145,41 +154,11 @@
 
     </div>
 
-
-
-    <script>
-               
-                  
-        $('#incidents_report').DataTable({
-            "lengthChange": false,
-            dom: 'Bfrtip',
-           
-            buttons: [{
-                    extend: 'pdfHtml5',
-                    className: 'btn btn-info btn-sm',
-                    title: 'Incidents Report',
-                },
-                {
-                    extend: 'csvHtml5',
-                    className: 'btn btn-success btn-sm',
-                    title: 'Incidents Report',
-                },
-                {
-                    extend: 'copyHtml5',
-                    className: 'btn btn-primary btn-sm',
-                    title: 'Incidents Report',
-                },
-                {
-                    extend: 'excelHtml5',
-                    className: 'btn btn-secondary btn-sm',
-                    title: 'Incidents Report',
-                },
-
-
-             ]
-        });
    
-</script>
+@stop
 
-
-@endsection
+@section('footer')
+<div class="footer-content">
+            <p>&copy; 2023 ICTAZ WHISTLE BLOWER HACKATHON. All rights reserved. Created and designed with ❤️ by Chanda Chewe.</p>
+        </div> 
+@stop

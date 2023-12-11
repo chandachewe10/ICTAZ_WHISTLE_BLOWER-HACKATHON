@@ -35,6 +35,7 @@ class EventServiceProvider extends ServiceProvider
         $event->menu->add([
             'text' => 'Profile',
             'url' => route('user.profile', Auth::user()->id),
+            'icon' => 'fas fa-user',
 
            
         ]);

@@ -308,10 +308,11 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
-        ['header' => 'Dashboard'],
+         'Dashboard',
         [
             'text' => 'home',
             'route' => 'home',
+            'icon' => 'fas fa-home',
 
         ],
         ['header' => 'Features'],
@@ -319,22 +320,23 @@ return [
             'text' => 'Report Incident',
             'route' => 'report',
             'icon' => 'fas fa-exclamation-triangle',
-            
             'label_color' => 'success',
+            'can' => 'is_reporter'
         ],
 
         [
             'text' => 'My Reported Cases',
             'route' => 'report.cases',
-            'icon' => 'fas fa-exclamation-triangle',
-            
+            'icon' => 'fas fa-exclamation-triangle',            
             'label_color' => 'success',
+            'can' => 'is_reporter'
         ],
         [
             'text' => 'Report Statistics',
             'route' => 'user.stat',
             'icon' => 'fa fa-line-chart',
             'label_color' => 'success',
+            'can' => 'is_reporter'
         ],
 
 
@@ -343,22 +345,23 @@ return [
             'route' => 'crime.stats',
             'icon' => 'fa fa-bar-chart',
             'label_color' => 'success',
+            'can' => ['is_security_agency','is_super_admin','is_other_agency']
         ],
 
         [
             'text' => 'Agency',
             'route' => 'agency.index',
             'icon' => 'fas fa-exclamation-triangle',
-           
             'label_color' => 'success',
+            'can' => ['is_security_agency','is_super_admin','is_other_agency']
         ],
 
         [
             'text' => 'Manage Users',
             'route' => 'users',
-            'icon' => 'fas fa-users',
-            
+            'icon' => 'fas fa-users',            
             'label_color' => 'success',
+            'can' => 'is_super_admin'
         ],
 
 

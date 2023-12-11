@@ -1,6 +1,6 @@
 <nav class="js-navbar">
     <a href="{{ url('/') }}" class="js-nav-logo text-primary">
-        {{-- {{ config('app.name', 'Laravel') }} --}}
+        
         {{ config(__('app.name'), 'ICTAZ WHISTLE BLOWER HACKATHON') }}
     </a>
     <ul class="js-nav-menu">

@@ -1,6 +1,6 @@
 
 @extends('adminlte::page')
-@section('title', 'Crime Categories')
+@section('title', 'Dashboard')
 
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -9,7 +9,7 @@
 
 
 @section('content_header')
-    <h1>Crime Categories</h1>
+    <h1>Dashboard</h1>
 @stop
 
 @section('content')

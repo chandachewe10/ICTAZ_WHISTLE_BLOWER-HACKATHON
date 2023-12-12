@@ -1,49 +1,218 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+@section('title', 'Roles')
 
-@section('title')
-    {{ $title }}
-@endsection
+@section('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@stop
+
+
+
+@section('content_header')
+    <h1>Role</h1>
+@stop
 
 @section('content')
-    <div class="card">
-        <div class="card-header text-center">
-            Assign Role
-        </div>
-        <div class="card-body">
-            <x-errors />
+<div class="container">
+        <div class="card">
 
-            <ul class="list-group">
-                <li class="list-group-item text-capitalize"><span class="text-primary">{{ __('Name') }}:
-                    </span>{{ $user->name }}</li>
 
-                <li class="list-group-item text-capitalize"><span class="text-primary">{{ __('Current Role') }}:
-                    </span>{{ $user->role }}</li>
-            </ul>
+            <div class="card-body">
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
 
-            <form action="{{ route('role.update', $user->id) }}" method="POST">
-                {{ csrf_field() }}
-
-        
-
-                <div class="form-group">
-                    <label for="role">Role</label>
-
-                    <select name="role" id="role" class="form-control">
-                        <option value="" selected disabled>Select Role</option>
-                        <option value="superAdmin" @if ($user->role == 'superAdmin') selected @endif>{{ 'super Admin' }}</option>
-                        <option value="securityAgency" @if ($user->role == 'securityAgency') selected @endif>{{ 'Security Agency' }}</option>
-                        <option value="otherAgency" @if ($user->role == 'otherAgency') selected @endif>{{ 'Other Agency' }}</option>
-                        <option value="reporter" @if ($user->role == 'reporter') selected @endif>{{ 'Reporter' }}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <button class="btn btn-primary pull-right" type="submit">
-                        Update
-                    </button>
-                </div>
-            </form>
+                @if (Auth::check())
+                    <div class="card-header text-center text-uppercase">Statistics</div>
+                    <div class="chart has-fixed-height" id="bars_basic"></div>
+                @endif
+            </div>
         </div>
     </div>
 
-@endsection
+
+    {{-- @foreach ($categories as $category)
+        @php
+            $cat = $category->category_name 
+        @endphp
+        <ul>
+            <li>
+                {{ $cat}} : 
+                {{ $category->incidents->count() }}
+            </li>
+        </ul>
+
+
+
+    @endforeach --}}
+
+    {{-- {{ $var }} --}}
+
+    
+@stop
+
+
+
+
+@section('footer')
+<div class="footer-content">
+            <p>&copy; 2023 ICTAZ WHISTLE BLOWER HACKATHON. All rights reserved. Created and designed with ❤️ by Chanda Chewe.</p>
+        </div> 
+@stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,7 +8,7 @@
 
 
 @section('content_header')
-    <h1>Reported Cases</h1>
+    <h1>Single Incident</h1>
 @stop
 
 @section('content')

@@ -313,6 +313,7 @@ return [
             'text' => 'home',
             'route' => 'home',
             'icon' => 'fas fa-home',
+            'active' => ['home*'],
 
         ],
         ['header' => 'Features'],
@@ -321,14 +322,16 @@ return [
             'route' => 'crime-category.index',
             'icon' => 'fas fa-chart-pie',
             'label_color' => 'success',
-            'can' => ['is_security_agency','is_super_admin']
+            'can' => ['is_security_agency','is_super_admin'],
+            'active' => ['crime-category*'],
         ],
         [
             'text' => 'Report Incident',
             'route' => 'report',
             'icon' => 'fas fa-exclamation-triangle',
             'label_color' => 'success',
-            'can' => 'is_reporter'
+            'can' => 'is_reporter',
+           
         ],
 
         [
@@ -360,7 +363,8 @@ return [
             'route' => 'incident.index',
             'icon' => 'fas fa-chart-pie',
             'label_color' => 'success',
-            'can' => ['is_security_agency','is_super_admin','is_other_agency']
+            'can' => ['is_security_agency','is_super_admin','is_other_agency'],
+            'active' => ['crime-category*','report*'],
         ],
 
        
@@ -372,7 +376,8 @@ return [
             'route' => 'agency.index',
             'icon' => 'fas fa-exclamation-triangle',
             'label_color' => 'success',
-            'can' => ['is_security_agency','is_super_admin','is_other_agency']
+            'can' => ['is_security_agency','is_super_admin','is_other_agency'],
+            'active' => ['agency*'],
         ],
 
         [
@@ -380,7 +385,8 @@ return [
             'route' => 'users',
             'icon' => 'fas fa-users',            
             'label_color' => 'success',
-            'can' => 'is_super_admin'
+            'can' => 'is_super_admin',
+            'active' => ['users*'],
         ],
 
 
@@ -394,7 +400,8 @@ return [
             'route' => 'announcement.index',
             'icon' => 'fas fa-bell',
             'label_color' => 'success',
-            'can' => ['is_security_agency','is_super_admin']
+            'can' => ['is_security_agency','is_super_admin'],
+            'active' => ['announcement*'],
         ],
        
         [
@@ -402,6 +409,7 @@ return [
             'key'  => 'news',
             'route' => 'news',
             'icon' => 'fas fa-newspaper',
+            'active' => ['news*'],
         ],
 
     ],

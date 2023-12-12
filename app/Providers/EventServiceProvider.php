@@ -36,6 +36,7 @@ class EventServiceProvider extends ServiceProvider
             'text' => 'Profile',
             'url' => route('user.profile', Auth::user()->id),
             'icon' => 'fas fa-user',
+            'active' => ['profile*'],
 
            
         ]);

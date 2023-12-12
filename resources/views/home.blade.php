@@ -24,7 +24,7 @@
                     </div>
                 @endif
 
-                {{ __('Welcome ') }} <span class="text-primary">{{ Auth::user()->name }}</span>
+                {{ __('Welcome ') }} <span class="text-primary"><a href="{{route('user.profile', Auth::user()->id)}}"> {{ Auth::user()->name }}</a></span>
             </div>
         </div>
 
@@ -58,7 +58,7 @@
 
                     <div class="col-md-3 card card-header  text-center">
                         <div class="card card-heading bg-primary text-white text-uppercase">
-                            Total Open Invistigation
+                            Total Open Investigations
                         </div>
                         {{-- <a href="{{ route('staff.index') }}"> --}}
                         <div class="card card-body">
@@ -134,7 +134,7 @@
 
                             @else
                                 <tr>
-                                    <td colspan="5" class="text-center">No Crime incident yet</td>
+                                    <td colspan="12" class="text-center">No Crime incident yet</td>
                                 </tr>
                             @endif
                         </tbody>

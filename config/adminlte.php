@@ -364,7 +364,7 @@ return [
             'icon' => 'fas fa-chart-pie',
             'label_color' => 'success',
             'can' => ['is_security_agency','is_super_admin','is_other_agency'],
-            'active' => ['crime-category*','report*'],
+            'active' => ['report*'],
         ],
 
        

@@ -18,6 +18,8 @@ class Incident extends Model
         'lga',
         'video',
         'photo',
+        'complainant_name',
+        'witness_name'
     ];
 
     // INcidents has many feedbacks

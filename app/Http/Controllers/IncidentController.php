@@ -21,9 +21,11 @@ class IncidentController extends Controller
     {
         $user = User::all();
 
-        if ($user && ($request->user()->is_super_admin() ||
-            $request->user()->is_security_agency() ||
-            $request->user()->is_other_agency())) {
+        if (
+            $user && ($request->user()->is_super_admin() ||
+                $request->user()->is_security_agency() ||
+                $request->user()->is_other_agency())
+        ) {
             //fetch 5 incidents from database which are active and latest
             $incidents = Incident::orderBy('created_at', 'desc')->paginate(10);
             $title = 'All Incidents';
@@ -75,6 +77,7 @@ class IncidentController extends Controller
      */
     public function store(Request $request)
     {
+        
         // Assign variable for request
         // $r = request();
 
@@ -82,6 +85,8 @@ class IncidentController extends Controller
         $this->validate($request, [
             'crime_category_id' => 'required',
             'lga' => 'required',
+            'complainant_name' => 'string|max:255|sometimes',
+            'witness_name' => 'string|max:255|sometimes',
             'address' => 'required',
             'description' => 'required',
             'photo' => 'image | mimes:jpeg,png,jpg,gif| sometimes',
@@ -118,23 +123,24 @@ class IncidentController extends Controller
         // Save the rest of the content
 
         if ($request->hasFile('photo') && $request->hasFile('video')) {
-            $incident = Incident::create([
+            Incident::create([
                 'reporter_id' => $request->user()->id,
                 'crime_category_id' => $request->crime_category_id,
-
+                'complainant_name' => $request->complainant_name,
+                'witness_name' => $request->witnesss_name,
                 'lga' => request()->lga,
                 'address' => $request->address,
                 'description' => $request->description,
-
                 'photo' => 'uploads/evidence/images/' . $photo_new_name,
                 'video' => 'uploads/evidence/video' . $video_new_name,
 
             ]);
         } elseif ($request->hasFile('photo')) {
-            $incident = Incident::create([
+            Incident::create([
                 'reporter_id' => $request->user()->id,
                 'crime_category_id' => $request->crime_category_id,
-
+                'complainant_name' => $request->complainant_name,
+                'witness_name' => $request->witnesss_name,
                 'lga' => request()->lga,
                 'address' => $request->address,
                 'description' => $request->description,
@@ -143,10 +149,11 @@ class IncidentController extends Controller
 
             ]);
         } elseif ($request->hasFile('video')) {
-            $incident = Incident::create([
+            Incident::create([
                 'reporter_id' => $request->user()->id,
                 'crime_category_id' => $request->crime_category_id,
-
+                'complainant_name' => $request->complainant_name,
+                'witness_name' => $request->witnesss_name,
                 'lga' => request()->lga,
                 'address' => $request->address,
                 'description' => $request->description,
@@ -155,10 +162,11 @@ class IncidentController extends Controller
 
             ]);
         } else {
-            $incident = Incident::create([
+            Incident::create([
                 'reporter_id' => $request->user()->id,
                 'crime_category_id' => $request->crime_category_id,
-
+                'complainant_name' => $request->complainant_name,
+                'witness_name' => $request->witnesss_name,
                 'lga' => request()->lga,
                 'address' => $request->address,
                 'description' => $request->description,
@@ -263,9 +271,11 @@ class IncidentController extends Controller
         //
         $incident = Incident::findOrFail($id);
 
-        if ($incident && ($incident->reporter_id == $request->user()->id
-            || $request->user()->is_security_agency()
-            || $request->user()->is_super_admin())) {
+        if (
+            $incident && ($incident->reporter_id == $request->user()->id
+                || $request->user()->is_security_agency()
+                || $request->user()->is_super_admin())
+        ) {
 
             // if (file_exists(public_path($incident->photo))) {
             //     unlink(public_path($incident->photo));
@@ -299,7 +309,8 @@ class IncidentController extends Controller
         foreach ($categories as $crimes) {
             $var[] = $crimes->category_name;
             $var2[] = $crimes->incidents->count();
-        };
+        }
+        ;
 
         // new instant of crime stat
         $chart = new CrimeStat;
@@ -326,12 +337,13 @@ class IncidentController extends Controller
         // $title = "Search Result";
 
         $incidents = Incident::where('address', 'like', '%' . request('search') . '%')
-            ->orWhere('lga', 'like', '%' . request('search') . '%')        
+            ->orWhere('lga', 'like', '%' . request('search') . '%')
             // ->orWhere($incidents->repoter->name, 'like', '%' . request('search') . '%')
             ->orderBy('created_at', 'desc')
-            ->paginate(15);;
-        
-            
+            ->paginate(15);
+        ;
+
+
 
         return view('pages.admin.incident.result')
             ->with('incidents', $incidents)

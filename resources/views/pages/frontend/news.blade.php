@@ -3,6 +3,7 @@
 
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 @stop
 
 
@@ -17,7 +18,7 @@
 
             <div class="card-header text-center">News/Announcement</div>
             <div class="card-body">
-                <table class="js-table">
+                <table class="js-table" id="news">
                     <thead>
                         <th scope="col" class="text-left">Heading</th>
                         <th scope="col" class="text-left">Updated</th>
@@ -54,7 +55,50 @@
     </div>
 @stop
 
+@section('js')
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+<script>
 
+
+    $('#news').DataTable({
+        "lengthChange": false,
+        dom: 'Bfrtip',
+
+        buttons: [{
+            extend: 'pdfHtml5',
+            className: 'btn btn-info btn-sm',
+            title: 'news',
+        },
+        {
+            extend: 'csvHtml5',
+            className: 'btn btn-success btn-sm',
+            title: 'news',
+        },
+        {
+            extend: 'copyHtml5',
+            className: 'btn btn-primary btn-sm',
+            title: 'news',
+        },
+        {
+            extend: 'excelHtml5',
+            className: 'btn btn-secondary btn-sm',
+            title: 'news',
+        },
+
+
+        ]
+    });
+
+</script>
+
+
+
+@stop
 
 
 @section('footer')

@@ -62,11 +62,15 @@ class FrontendController extends Controller
     // User Report case
     public function report(Request $request)
     {
+        // dd($request);
+        
         // Validate request
         $this->validate($request, [
             'crime_category_id' => 'required',
             'lga' => 'required',
             'address' => 'required',
+            'complainant_name' => 'required|max:255|sometimes',
+            'witness_name' => 'required|max:255|sometimes',
             'description' => 'required',
             'photo' => 'image | mimes:jpeg,png,jpg,gif| sometimes',
             'video' => 'video | sometimes',
@@ -103,7 +107,8 @@ class FrontendController extends Controller
             $incident = Incident::create([
                 'reporter_id' => $request->user()->id,
                 'crime_category_id' => $request->crime_category_id,
-
+                'complainant_name' => $request->complainant_name,
+                'witness_name' => $request->witnesss_name,
                 'lga' => request()->lga,
                 'address' => $request->address,
                 'description' => $request->description,
@@ -116,7 +121,8 @@ class FrontendController extends Controller
             $incident = Incident::create([
                 'reporter_id' => $request->user()->id,
                 'crime_category_id' => $request->crime_category_id,
-
+                'complainant_name' => $request->complainant_name,
+                'witness_name' => $request->witnesss_name,
                 'lga' => request()->lga,
                 'address' => $request->address,
                 'description' => $request->description,
@@ -128,7 +134,8 @@ class FrontendController extends Controller
             $incident = Incident::create([
                 'reporter_id' => $request->user()->id,
                 'crime_category_id' => $request->crime_category_id,
-
+                'complainant_name' => $request->complainant_name,
+                'witness_name' => $request->witnesss_name,
                 'lga' => request()->lga,
                 'address' => $request->address,
                 'description' => $request->description,
@@ -140,7 +147,8 @@ class FrontendController extends Controller
             $incident = Incident::create([
                 'reporter_id' => $request->user()->id,
                 'crime_category_id' => $request->crime_category_id,
-
+                'complainant_name' => $request->complainant_name,
+                'witness_name' => $request->witness_name,
                 'lga' => request()->lga,
                 'address' => $request->address,
                 'description' => $request->description,

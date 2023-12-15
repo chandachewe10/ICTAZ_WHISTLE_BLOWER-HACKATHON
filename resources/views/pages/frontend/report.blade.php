@@ -29,11 +29,17 @@
                         value="{{ old('phone') }}">
                 </div>
 
-                {{-- <div class="form-group">
-                    <label for="name"><span class="text-danger">*</span>Phone</label>
-                    <input type="text" name="phone" pattern="^[0-9]*$" id="phone" class="form-control" required placeholder="Contact Phone"
-                        value="{{ old('phone') }}">
-                </div> --}}
+                <div class="form-group">
+                <label for="complainant"><span class="text-danger"></span>Complainant Name</label>
+                <input type="text" name="complainant_name" id="complainant_name" class="form-control"
+                    placeholder="Complainant Name" value="{{ old('complainant_name') }}">
+            </div>
+
+            <div class="form-group">
+                <label for="witness"><span class="text-danger"></span>Witness Name</label>
+                <input type="text" name="witness_name" id="witness_name" class="form-control" placeholder="Witness Name"
+                    value="{{ old('witness_name') }}">
+            </div>
 
                 <div class="form-group">
                     <label for="lga"><span class="text-danger">*</span>Incident Location (LGA)</label>

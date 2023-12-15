@@ -66,7 +66,7 @@
                                 No photo 
                             @else
                                 <figure>
-                                    <img src="{{ asset($user->photo) }}" class="img-fluid" alt="">
+                                    <img src="{{ asset($user->photo) }}" class="img-fluid" alt="Profile" width="100" height="100">
                                 </figure>
                             @endif
 

@@ -29,7 +29,7 @@
                         <tr>
                             <td scope="row" data-label="Search">
                                 <form method="GET" action="{{route('incident.search')}}" class="form-inline my-2 my-lg-0">
-                                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Address, LGA"
+                                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Address, Lusaka"
                                         aria-label="search">
                                     <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
                                 </form>

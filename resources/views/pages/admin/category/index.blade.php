@@ -10,6 +10,7 @@
 
 @section('content_header')
 <h1>Crime Category</h1>
+
 @stop
 
 
@@ -104,6 +105,22 @@
                     });
                
             </script>
+            <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,ha,ig,fr',
+                // layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+
+            // jQuery('.goog-logo-link').css('display', 'none');
+            // jQuery('.goog-te-gadget').css('font-size', '0');
+        }
+
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+    
             
 @stop
 

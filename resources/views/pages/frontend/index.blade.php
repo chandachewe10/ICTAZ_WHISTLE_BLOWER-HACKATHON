@@ -9,7 +9,7 @@
 
 
 @section('content_header')
-    <h1>SIgn In </h1>
+    <h1>Sign In </h1>
 @stop
 
 @section('content')
@@ -18,7 +18,7 @@
         <div class="col-md-8">
             {{-- <div class="text-center p-3 font-weight-bold text-white"> --}}
             <div class="logo-image text-center font-weight-bold text-white mx-auto">
-                <img src="{{asset('images/ICTAZ_Log')}}" alt="LOGO" >
+               <img src="{{asset('images/ICTAZ_LOGO.png')}}" alt="LOGO" height="100" style="border-radius:100%">
             </div>
             <div class="card">
                 <div class="card-header text-center text-uppercase"><i class="fa fa-user"></i>  {{ __('Login') }}</div>

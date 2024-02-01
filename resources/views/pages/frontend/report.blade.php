@@ -42,9 +42,9 @@
             </div>
 
                 <div class="form-group">
-                    <label for="lga"><span class="text-danger">*</span>Incident Location (LGA)</label>
+                    <label for="lga"><span class="text-danger">*</span>Incident Location (Province)</label>
                     <input type="text" name="lga" id="lga" class="form-control" required
-                        placeholder="Incident Location (LGA)" value="{{ old('lga') }}">
+                        placeholder="Incident Location (Province)" value="{{ old('lga') }}">
                 </div>
 
                 <div class="form-group">

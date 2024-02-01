@@ -28,18 +28,20 @@ class EventServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-{
-    parent::boot();
+    {
+        parent::boot();
 
-    Event::listen(BuildingMenu::class, function (BuildingMenu $event) {
-        $event->menu->add([
-            'text' => 'Profile',
-            'url' => route('user.profile', Auth::user()->id),
-            'icon' => 'fas fa-user',
-            'active' => ['profile*'],
+        Event::listen(BuildingMenu::class, function (BuildingMenu $event) {
+            if (auth()->check()) {
+                $event->menu->add([
+                    'text' => 'Profile',
+                    'url' => route('user.profile', Auth::user()->id),
+                    'icon' => 'fas fa-user',
+                    'active' => ['profile*'],
 
-           
-        ]);
-    });
-}
+
+                ]);
+            }
+        });
+    }
 }

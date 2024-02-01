@@ -49,12 +49,12 @@
 
                 <div class="form-group">
                     <label for="website"><span class="text-danger"></span>Website</label>
-                    <input type="url" name="website" id="website" class="form-control" required
+                    <input type="url" name="website" id="website" class="form-control" 
                         placeholder="Website (https://www..)" value="{{ old('website') }}">
                 </div>
 
                 <div class="form-group">
-                    <label for="email"><span class="text-danger"></span>Email</label>
+                    <label for="email"><span class="text-danger"><span class="text-danger">*</span></span>Email</label>
                     <input type="email" name="email" id="email" class="form-control" required
                         placeholder="Email" value="{{ old('email') }}">
                 </div>
